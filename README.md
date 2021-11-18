@@ -14,7 +14,7 @@ This game will attempt to use the WebAudioAPI and fallback to HTML5 Audio if nec
 The animations in this game are a combination of PixiJS MovieClips built from sprite images and tweens. Since PixiJS doesn't provide a tweening API, Green Sock was used.
 
 ## Game Logic
-The flow of this game is managed using Javascript. The main chunks of business logic are implemented as ES6 classes which are transpiled to ES5 using Babel.
+The flow of this game is managed using only JavaScript, and nothing else. The main chunks of business logic are implemented as ES6 classes which are transpiled to ES5 using Babel.
 
 ## Working With This Repo
 
