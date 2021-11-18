@@ -116,16 +116,16 @@ class Stage extends Container {
 
   pause() {
     this.dog.timeline.pause();
-    this.ducks.forEach((duck) => {
-      duck.timeline.pause();
-    });
+    if (this.ducks.length != 0) {
+      this.ducks[0].timeline.pause();
+    }
   }
 
   resume() {
     this.dog.timeline.play();
-    this.ducks.forEach((duck) => {
-      duck.timeline.play();
-    });
+    if (this.ducks.length != 0) {
+      this.ducks[0].timeline.play();
+    }
   }
 
   /**

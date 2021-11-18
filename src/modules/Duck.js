@@ -179,7 +179,7 @@ class Duck extends Character {
    * @returns {*|boolean}
    */
   isActive() {
-    return this.visible || super.isActive();
+    return this.visible || this.isActive();
   }
 
   /**
@@ -199,41 +199,21 @@ class Duck extends Character {
    * @param {Number} val A number from 0 (slow) to 10 (fast) that sets the length of the flight tween
    */
   set speed(val) {
-    let flightAnimationMs;
-    switch (val) {
-      case 0:
-        flightAnimationMs = 3000;
-        break;
-      case 1:
-        flightAnimationMs = 2800;
-        break;
-      case 2:
-        flightAnimationMs = 2500;
-        break;
-      case 3:
-        flightAnimationMs = 2000;
-        break;
-      case 4:
-        flightAnimationMs = 1800;
-        break;
-      case 5:
-        flightAnimationMs = 1500;
-        break;
-      case 6:
-        flightAnimationMs = 1300;
-        break;
-      case 7:
-        flightAnimationMs = 1200;
-        break;
-      case 8:
-        flightAnimationMs = 800;
-        break;
-      case 9:
-        flightAnimationMs = 600;
-        break;
-      case 10:
-        flightAnimationMs = 500;
-        break;
+    var flightAnimationMs;
+    if (val === 0) flightAnimationsMs = 3000;
+    if (val === 1) flightAnimationsMs = 2800;
+    if (val === 2) flightAnimationsMs = 2500;
+    if (val === 3) flightAnimationsMs = 2000;
+    if (val === 4) flightAnimationsMs = 1800;
+    if (val === 5) flightAnimationsMs = 1500;
+    if (val === 6) flightAnimationsMs = 1300;
+    if (val === 7) flightAnimationsMs = 1200;
+    if (val === 8) flightAnimationsMs = 800;
+    if (val === 9) flightAnimationsMs = 600;
+    if (val === 10) flightAnimationsMs = 500;
+    if (!(val >= 0) && !(val <= 10)) {
+      this.speedVal = -1;
+      this.flightAnimationMs = 1;
     }
     this.speedVal = val;
     this.flightAnimationMs = flightAnimationMs;
